@@ -346,7 +346,6 @@ class FieldRenderer(BaseRenderer):
             html = html.replace(k, v)
         return html
 
-
     def list_to_class(self, html, klass):
         classes = add_css_class(klass, self.get_size_class())
         mapping = [
@@ -400,7 +399,7 @@ class FieldRenderer(BaseRenderer):
         if isinstance(self.widget, RadioSelect):
             html = self.radio_list_to_class(html, 'radio radio-success')
         elif isinstance(self.widget, CheckboxSelectMultiple):
-            html = self.list_to_class(html, 'checkbox')
+            html = self.radio_list_to_class(html, 'checkbox checkbox-success')
         elif isinstance(self.widget, SelectDateWidget):
             html = self.fix_date_select_input(html)
         elif isinstance(self.widget, ClearableFileInput):
